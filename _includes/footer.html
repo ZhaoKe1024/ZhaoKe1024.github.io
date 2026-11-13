@@ -9,6 +9,18 @@
     {% if site.author.github %}
       <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
     {% endif %}
+    {% if site.author.huggingface %}
+      <li><a href="{{ site.author.huggingface }}"><i class="fas fa-fw fa-face-smile" aria-hidden="true"></i> Hugging Face</a></li>
+    {% endif %}
+    {% if site.author.twitter %}
+      <li><a href="https://twitter.com/{{ site.author.twitter }}"><i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i> X</a></li>
+    {% endif %}
+    {% if site.author.zhihu %}
+      <li><a href="https://www.zhihu.com/people/{{ site.author.zhihu }}"><i class="fab fa-fw fa-zhihu" aria-hidden="true"></i> Zhihu</a></li>
+    {% endif %}
+    {% if site.author.cnblogs %}
+      <li><a href="{{ site.author.cnblogs }}"><i class="fas fa-fw fa-blog" aria-hidden="true"></i> 博客园</a></li>
+    {% endif %}
     {% if site.author.bitbucket %}
       <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
     {% endif %}

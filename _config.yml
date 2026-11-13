@@ -42,16 +42,12 @@ author:
   scopus           : # Scopus 作者页 URL
   dblp             : # 模板未内置 dblp 图标，可写到 uri 里
 
-  # -------- 代码 / 社交（留空即可） --------
+  # -------- 代码 / 社交（只保留本人真实在用的账号） --------
   github           : "ZhaoKe1024"
-  kaggle           : # Kaggle 用户名
-  zhihu            : # 知乎 people/xxx 里的 xxx
-  weibo            : # 微博数字 ID / 用户名
-  twitter          : # X 用户名（不含 @）
-  linkedin         : # LinkedIn 用户名
-  bluesky          : # 例： yourname.bsky.social
-  youtube          : # YouTube @handle（不含 @）
-  bilibili         : # 模板未内置，可写进 uri
+  huggingface      : "https://huggingface.co/CullenZhao"   # 写完整 URL
+  twitter          : "CullenZhao53901"                     # X 用户名（不含 @）
+  zhihu            : "ren-jian-chou-chang-ke-98-46"        # 知乎 people/xxx 里的 xxx
+  cnblogs          : "https://www.cnblogs.com/zhaoke271828" # 博客园，写完整 URL
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:

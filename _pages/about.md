@@ -30,12 +30,7 @@ My research lies at the intersection of **large language models** and **optimiza
 | [dsh-style-asoul](https://github.com/ZhaoKe1024/dsh-style-asoul) | DeepSeek Harness 的 A-SOUL 风格皮肤与桌宠插件 — A-SOUL themed UI skin & desktop pet plugins for DSH. |
 | [ASOUL-SO-VITS-SVC](https://github.com/ZhaoKe1024/ASOUL-SO-VITS-SVC) | A-SOUL 虚拟偶像音色克隆（SO-VITS-SVC）模型开源 — open-sourced voice cloning models for virtual idols. |
 | [IntelligentAlgorithmScheduler](https://github.com/ZhaoKe1024/IntelligentAlgorithmScheduler) | 各种元启发式算法求解云任务负载均衡调度 — metaheuristics for cloud task load-balancing scheduling. |
-| [DisentangledRepr](https://github.com/ZhaoKe1024/DisentangledRepr) | 解耦表示学习 AGEDR：COUGHVID 数据集的咳嗽声音诊断 — disentangled representation learning for cough-sound diagnosis. |
-| [AnomalousSoundDetection-Pytorch-KZ](https://github.com/ZhaoKe1024/AnomalousSoundDetection-Pytorch-KZ) | 异常声音检测 (ASD) 的模型、训练与评估框架 — a PyTorch pipeline for anomalous sound detection. |
 | [SelectBreedingKits](https://github.com/ZhaoKe1024/SelectBreedingKits) | 基于图的家禽育种族谱分析与配种优化 — graph-based pedigree analysis and breeding optimization. |
-| [Audio-Record-WebPage](https://github.com/ZhaoKe1024/Audio-Record-WebPage) | 网页端录制音频并保存的 JS & Python 实现 — record audio in the browser and save it server-side. |
-| [AudioClassification-Pytorch-KZhao](https://github.com/ZhaoKe1024/AudioClassification-Pytorch-KZhao) · [Heart-Sound-Diagnosis](https://github.com/ZhaoKe1024/Heart-Sound-Diagnosis) · [Voice-Sound-Diagnosis](https://github.com/ZhaoKe1024/Voice-Sound-Diagnosis) | 音频分类 / 心音分类 / 语音分类 — audio, heart-sound and voice classification. |
-| [UCAS-Matrix_Analysis_and_Application-Python](https://github.com/ZhaoKe1024/UCAS-Matrix_Analysis_and_Application-Python) | UCAS 矩阵分析与应用课程作业 — coursework on matrix analysis and applications. |
 
 See the [Projects](/projects/) page for a longer write-up of the flagship repositories, and my [GitHub profile](https://github.com/ZhaoKe1024) for everything else.
 
