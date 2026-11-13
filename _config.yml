@@ -22,7 +22,7 @@ repository               : "ZhaoKe1024/ZhaoKe1024.github.io" # "用户名/仓库
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # -------- 基本信息（显示在左侧边栏 / 页脚） --------
-  avatar           : "profile.png"   # 头像文件，放在 images/ 下（把 images/profile.png 换成你自己的方图）
+  avatar           : "profile.jpg"   # 头像文件，放在 images/ 下
   name             : "Ke Zhao"
   pronouns         : # 例： "he/him"，留空则不显示
   bio              : "Ph.D. student @ ECNU · LLMs for Optimization · AI for Education"

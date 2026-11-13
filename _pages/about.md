@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am **Ke Zhao** (中文名), a Ph.D. student at [East China Normal University (ECNU)](https://www.ecnu.edu.cn/), Shanghai, China.
+Hi, I am **Ke Zhao** (赵轲), a Ph.D. student at [East China Normal University (ECNU)](https://www.ecnu.edu.cn/), Shanghai, China.
 My research lies at the intersection of **large language models** and **optimization**: making LLMs model, solve, generate and *evaluate* optimization problems. I also work on **AI for Education**, building benchmarks and rubric-driven evaluation for automated problem generation.
 
 我是华东师范大学在读博士研究生，研究方向为大模型驱动的优化问题建模与求解（LLM4Opt）以及教育人工智能（AI for Education）：围绕"开放式优化问题的生成、求解与 Rubrics 自动评测"构建数据集、框架与工具链。

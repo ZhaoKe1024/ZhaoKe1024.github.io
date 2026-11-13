@@ -13,8 +13,8 @@ redirect_from:
 
 Education
 ======
-* **Ph.D. in 【你的专业，如 Computer Science / 计算机科学与技术】**, East China Normal University (ECNU), Shanghai, 20XX – (expected 20XX)
-  * Advisor: Prof. XXX
+* **Ph.D. in Artificial Intelligence / 人工智能**, East China Normal University (ECNU), Shanghai, 2025 – 2029 (expected)
+  * Advisor: Prof. Hong Qian
   * Research: LLMs for Optimization, AI for Education
 * **M.S.**, 【学校】, 20XX – 20XX
   * Deep Learning, Representation Learning, Statistical Causal Inference
@@ -23,7 +23,7 @@ Education
 
 Research Experience
 ======
-* 20XX – now: Ph.D. Researcher, ECNU
+* 2025 – now: Ph.D. Researcher, ECNU
   * 开放式优化问题 benchmark 与 Rubrics 生成演化框架（OPT-MCM）
   * 优化问题建模求解的 Skill 生成与学习框架（OptSkills）
 * 20XX – 20XX: Master Researcher
