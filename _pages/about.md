@@ -1,56 +1,48 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Ke Zhao"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+Hi, I am **Ke Zhao** (中文名), a Ph.D. student at [East China Normal University (ECNU)](https://www.ecnu.edu.cn/), Shanghai, China.
+My research lies at the intersection of **large language models** and **optimization**: making LLMs model, solve, generate and *evaluate* optimization problems. I also work on **AI for Education**, building benchmarks and rubric-driven evaluation for automated problem generation.
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+我是华东师范大学在读博士研究生，研究方向为大模型驱动的优化问题建模与求解（LLM4Opt）以及教育人工智能（AI for Education）：围绕"开放式优化问题的生成、求解与 Rubrics 自动评测"构建数据集、框架与工具链。
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+[<i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub](https://github.com/ZhaoKe1024) · [<i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email](mailto:kezhao@stu.ecnu.edu.cn) · [CV](/cv/) · [Publications](/publications/) · [Projects](/projects/)
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+## Research Interests
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+- **LLMs for Optimization (LLM4Opt)** — open-ended optimization problem benchmarks, rubric generation & evolutionary evaluation, LLM-assisted modeling and solver selection.
+- **AI for Education** — automated exercise/problem generation, difficulty and solution-quality assessment, AI-assisted teaching for operations research.
+- **Machine Learning & Representation Learning** — disentangled representation learning, audio/heart-sound diagnosis, anomaly detection. *(Master)*
+- **Evolutionary Computing & Scheduling Optimization** — metaheuristics for cloud-task load balancing, graph-based breeding selection. *(Bachelor)*
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+## Open Source Projects
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+| Project | What it does |
+|:--------|:-------------|
+| [OPT-MCM](https://github.com/ZhaoKe1024/OPT-MCM) | 开放性的优化问题 benchmark 及 Rubrics 生成演化框架 — an evolutionary framework for open-ended optimization problems and rubric-based evaluation. |
+| [OptSkills](https://github.com/fujiwaranoM0kou/OptSkills) | 优化问题建模求解的 Skill 生成与学习框架 — a learning framework that generates reusable skills for modeling & solving OR problems. |
+| [dsh-style-asoul](https://github.com/ZhaoKe1024/dsh-style-asoul) | DeepSeek Harness 的 A-SOUL 风格皮肤与桌宠插件 — A-SOUL themed UI skin & desktop pet plugins for DSH. |
+| [ASOUL-SO-VITS-SVC](https://github.com/ZhaoKe1024/ASOUL-SO-VITS-SVC) | A-SOUL 虚拟偶像音色克隆（SO-VITS-SVC）模型开源 — open-sourced voice cloning models for virtual idols. |
+| [IntelligentAlgorithmScheduler](https://github.com/ZhaoKe1024/IntelligentAlgorithmScheduler) | 各种元启发式算法求解云任务负载均衡调度 — metaheuristics for cloud task load-balancing scheduling. |
+| [DisentangledRepr](https://github.com/ZhaoKe1024/DisentangledRepr) | 解耦表示学习 AGEDR：COUGHVID 数据集的咳嗽声音诊断 — disentangled representation learning for cough-sound diagnosis. |
+| [AnomalousSoundDetection-Pytorch-KZ](https://github.com/ZhaoKe1024/AnomalousSoundDetection-Pytorch-KZ) | 异常声音检测 (ASD) 的模型、训练与评估框架 — a PyTorch pipeline for anomalous sound detection. |
+| [SelectBreedingKits](https://github.com/ZhaoKe1024/SelectBreedingKits) | 基于图的家禽育种族谱分析与配种优化 — graph-based pedigree analysis and breeding optimization. |
+| [Audio-Record-WebPage](https://github.com/ZhaoKe1024/Audio-Record-WebPage) | 网页端录制音频并保存的 JS & Python 实现 — record audio in the browser and save it server-side. |
+| [AudioClassification-Pytorch-KZhao](https://github.com/ZhaoKe1024/AudioClassification-Pytorch-KZhao) · [Heart-Sound-Diagnosis](https://github.com/ZhaoKe1024/Heart-Sound-Diagnosis) · [Voice-Sound-Diagnosis](https://github.com/ZhaoKe1024/Voice-Sound-Diagnosis) | 音频分类 / 心音分类 / 语音分类 — audio, heart-sound and voice classification. |
+| [UCAS-Matrix_Analysis_and_Application-Python](https://github.com/ZhaoKe1024/UCAS-Matrix_Analysis_and_Application-Python) | UCAS 矩阵分析与应用课程作业 — coursework on matrix analysis and applications. |
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+See the [Projects](/projects/) page for a longer write-up of the flagship repositories, and my [GitHub profile](https://github.com/ZhaoKe1024) for everything else.
 
-**Markdown generator**
+## Contact
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+- <i class="fas fa-fw fa-envelope" aria-hidden="true"></i> **Email:** [kezhao@stu.ecnu.edu.cn](mailto:kezhao@stu.ecnu.edu.cn) / [mathcszk271828@foxmail.com](mailto:mathcszk271828@foxmail.com)
+- <i class="fab fa-fw fa-github" aria-hidden="true"></i> **GitHub:** [@ZhaoKe1024](https://github.com/ZhaoKe1024)
+- <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> **Address:** East China Normal University, 500 Dongchuan Road, Minhang District, Shanghai, China
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
-
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
-
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+> 欢迎就 LLM4Opt、优化建模 benchmark、AI 教育评测等方向交流合作。
