@@ -121,7 +121,7 @@ Windows 上用 RubyInstaller 最省事：
 
 ```yaml
 author:
-  avatar   : "profile.png"          # 换成 images/profile.png（建议 400x400 方图）
+  avatar   : "profile.jpg"          # 图片放 images/ 下（建议 400x400 方图）
   name     : "Ke Zhao"
   bio      : "一句话简介"
   location : "Shanghai, China"
