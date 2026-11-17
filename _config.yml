@@ -51,11 +51,11 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  # 键名要和 _publications/*.md 里的 category 字段一致
-  manuscripts:
-    title: 'Journal Articles'
+  # 键名要和 _publications/*.md 里的 category 字段一致；顺序即页面上的分组顺序
   conferences:
     title: 'Conference Papers'
+  manuscripts:
+    title: 'Journal Articles'
   preprints:
     title: 'Preprints'
 

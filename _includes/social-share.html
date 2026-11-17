@@ -1,17 +1,30 @@
 {% include base_path %}
 
 <section class="page__share">
-  {% if site.data.ui-text[site.locale].share_on_label %}
-    <h4 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
+  <h4 class="page__share-title">Share / Find me</h4>
+
+  {% if site.author.twitter %}
+  <a href="https://x.com/intent/post?text={{ page.title | url_encode }}&amp;url={{ site.url }}{{ base_path }}{{ page.url | url_encode }}"
+     class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X</span></a>
   {% endif %}
 
-  <a href="https://bsky.app/intent/compose?text={{ base_path }}{{ page.url }}" class="btn btn--bluesky" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+  {% if site.author.github %}
+  <a href="https://github.com/{{ site.author.github }}" class="btn btn--github" title="GitHub">
+    <i class="fab fa-github" aria-hidden="true"></i><span> GitHub</span></a>
+  {% endif %}
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ base_path }}{{ page.url }}" class="btn btn--facebook" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  {% if site.author.huggingface %}
+  <a href="{{ site.author.huggingface }}" class="btn btn--huggingface" title="Hugging Face">
+    <i class="fas fa-face-smile" aria-hidden="true"></i><span> Hugging Face</span></a>
+  {% endif %}
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ base_path }}{{ page.url }}" class="btn btn--linkedin" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  {% if site.author.cnblogs %}
+  <a href="{{ site.author.cnblogs }}" class="btn btn--cnblogs" title="博客园">
+    <i class="fas fa-blog" aria-hidden="true"></i><span> 博客园</span></a>
+  {% endif %}
 
-  <a href="https://www.addtoany.com/add_to/mastodon?linkurl={{  base_path | append: page.url | url_encode }}" class="btn btn--mastodon" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Mastodon"><i class="fab fa-mastodon" aria-hidden="true"></i><span> Mastodon</span></a>
-
-  <a href="https://x.com/intent/post?text={{ base_path }}{{ page.url }}" class="btn btn--x" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
+  {% if site.author.zhihu %}
+  <a href="https://www.zhihu.com/people/{{ site.author.zhihu }}" class="btn btn--zhihu" title="Zhihu">
+    <i class="fab fa-zhihu" aria-hidden="true"></i><span> Zhihu</span></a>
+  {% endif %}
 </section>

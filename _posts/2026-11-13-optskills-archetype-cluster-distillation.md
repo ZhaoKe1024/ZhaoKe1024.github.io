@@ -32,13 +32,13 @@ LLM 做优化建模的三种主流做法——后训练（ORLM/OptMATH/LLMOPT/SI
 
 ## 1. archetype 是什么
 
-一个优化问题 archetype \(a\in\mathcal{A}\)，是从具体应用场景里抽象出来的**规范优化结构**。给定 archetype \(a\)，它的自然语言实例记作
+一个优化问题 archetype \\(a\in\mathcal{A}\\)，是从具体应用场景里抽象出来的**规范优化结构**。给定 archetype \\(a\\)，它的自然语言实例记作
 
 $$
 x = g_u(a)
 $$
 
-其中 \(u\) 是具体场景，\(g_u\) 是“把这个结构用某个场景说出来”的 verbalization 过程。理想情况下，x 和它的 archetype 应当诱导出同一个优化模型：
+其中 \\(u\\) 是具体场景，\\(g_u\\) 是“把这个结构用某个场景说出来”的 verbalization 过程。理想情况下，x 和它的 archetype 应当诱导出同一个优化模型：
 
 $$
 f_{\mathrm{model}}(a) = f_{\mathrm{model}}\bigl(g_u(a)\bigr)
@@ -48,40 +48,40 @@ $$
 
 ### 1.1 怎么得到 archetype 表示
 
-用一个 LLM extractor 从题目 \(x_i\) 抽两样东西：
+用一个 LLM extractor 从题目 \\(x_i\\) 抽两样东西：
 
-- **ingredients \(\kappa_i\)**：抽象层面的变量、约束、目标（刻意忽略实体名、场景背景）；
-- **edited problem \(\tilde{x}_i\)**：把场景叙述与实体名替换成通用占位符，但**保留**原始参数、约束与数值。
+- **ingredients \\(\kappa_i\\)**：抽象层面的变量、约束、目标（刻意忽略实体名、场景背景）；
+- **edited problem \\(\tilde{x}_i\\)**：把场景叙述与实体名替换成通用占位符，但**保留**原始参数、约束与数值。
 
-两者分别取 embedding \(w_i, v_i\)，加权归一化：
+两者分别取 embedding \\(w_i, v_i\\)，加权归一化：
 
 $$
 e_i = \mathrm{Norm}\bigl(\alpha\cdot w_i + (1-\alpha)\cdot v_i\bigr)
 $$
 
-embedding 模型是 Qwen3-Embedding-v3，\(\alpha\in[0,1]\) 控制“结构”与“改写后文本”的相对贡献。
+embedding 模型是 Qwen3-Embedding-v3，\\(\alpha\in[0,1]\\) 控制“结构”与“改写后文本”的相对贡献。
 
 ### 1.2 怎么聚类
 
-对归一化后的 \(e_i\) 直接上 **DBSCAN**（余弦距离）：
+对归一化后的 \\(e_i\\) 直接上 **DBSCAN**（余弦距离）：
 
 $$
 \mathcal{C} = \mathrm{DBSCAN}\bigl(\{e_i\}_{i=1}^{N};\ \epsilon,\ m\bigr)
 $$
 
-选 DBSCAN 而不是 k-means，是因为它不需要预先知道簇数、能标出噪声点——训练集里本来就有一些“孤例”不该被硬塞进某个 archetype。每个簇 \(C\) 即一组同 archetype 的问题。
+选 DBSCAN 而不是 k-means，是因为它不需要预先知道簇数、能标出噪声点——训练集里本来就有一些“孤例”不该被硬塞进某个 archetype。每个簇 \\(C\\) 即一组同 archetype 的问题。
 
 ## 2. 类簇上怎么演化：Phase I 的四步
 
-整体是“先建库、再学、最后用”三段。Phase I 建初始 skill 库 \(\mathcal{M}_0\)，有四个动作：
+整体是“先建库、再学、最后用”三段。Phase I 建初始 skill 库 \\(\mathcal{M}_0\\)，有四个动作：
 
 ### (1) Solver Portfolio Rollout —— 同一道题，多路线跑
 
-不同建模范式与求解器配置在同一道题上的适用性、稳定性差别很大。所以先让一个 LLM-based solver selector 从候选池 \(\mathcal{B}\) 里选出 top-k 个求解器 \(\mathcal{B}_i\)，然后：
+不同建模范式与求解器配置在同一道题上的适用性、稳定性差别很大。所以先让一个 LLM-based solver selector 从候选池 \\(\mathcal{B}\\) 里选出 top-k 个求解器 \\(\mathcal{B}_i\\)，然后：
 
-1. 为每个 \(b\in\mathcal{B}_i\) 生成优化模型 \(z_i^b\)；
-2. 迭代生成可执行代码 \(c_{i,t}^b\) 并接收执行观测 \(o_{i,t}^b\)；
-3. 经过 \(T_i^b\) 轮后得到可行解 \(\hat{y}_i^b\)。
+1. 为每个 \\(b\in\mathcal{B}_i\\) 生成优化模型 \\(z_i^b\\)；
+2. 迭代生成可执行代码 \\(c_{i,t}^b\\) 并接收执行观测 \\(o_{i,t}^b\\)；
+3. 经过 \\(T_i^b\\) 轮后得到可行解 \\(\hat{y}_i^b\\)。
 
 一条轨迹记作
 
@@ -89,7 +89,7 @@ $$
 \tau_i^b = \bigl(z_i^b,\ c_{i,1}^b, o_{i,1}^b,\ c_{i,2}^b, o_{i,2}^b,\ \dots,\ c_{i,T_i^b}^b,\ \hat{y}_i^b\bigr)
 $$
 
-轨迹集合 \(\mathcal{T}_i=\{\tau_i^b\}\)，按答案是否等于 \(y_i^\ast\) 分成正集 \(\mathcal{T}_i^+\) 与负集 \(\mathcal{T}_i^-\)。
+轨迹集合 \\(\mathcal{T}_i=\{\tau_i^b\}\\)，按答案是否等于 \\(y_i^\ast\\) 分成正集 \\(\mathcal{T}_i^+\\) 与负集 \\(\mathcal{T}_i^-\\)。
 
 > 这里是全流程最贵的一步，但也是信息量最大的：**正轨迹告诉你“什么配置能跑通”，负轨迹告诉你“什么会崩”**。
 
@@ -101,14 +101,14 @@ $$
 q_i = A_\eta(\mathcal{T}_i^+,\mathcal{T}_i^-) = (r_i,\ p_i)
 $$
 
-- \(r_i\)：从正轨迹里抽出的**标准作业流程（SOP）**——变量定义、目标构造、约束写法、求解器配置、状态检查、结果解析；
-- \(p_i\)：从负轨迹里总结的**常见坑**。
+- \\(r_i\\)：从正轨迹里抽出的**标准作业流程（SOP）**——变量定义、目标构造、约束写法、求解器配置、状态检查、结果解析；
+- \\(p_i\\)：从负轨迹里总结的**常见坑**。
 
-\(q_i\) 是后续蒸馏的原子单位。
+\\(q_i\\) 是后续蒸馏的原子单位。
 
 ### (3) Cluster-Based Skill Distillation —— 在类簇上蒸馏
 
-对每个簇 \(C\)，skill builder 聚合簇内所有 \(q_i\)：
+对每个簇 \\(C\\)，skill builder 聚合簇内所有 \\(q_i\\)：
 
 $$
 s_C = B_\eta\bigl(\{q_i \mid i\in C\}\bigr),\qquad
@@ -123,9 +123,9 @@ $$
 s=(m,\ w,\ p)
 $$
 
-- \(m\)：metadata（名字、一句话适用说明）——用于检索；
-- \(w\)：建模求解工作流；
-- \(p\)：常见坑。
+- \\(m\\)：metadata（名字、一句话适用说明）——用于检索；
+- \\(w\\)：建模求解工作流；
+- \\(p\\)：常见坑。
 
 ### (4) 得到的规模
 
@@ -135,26 +135,26 @@ $$
 
 ## 3. Phase II：新问题上怎么 refine / expand
 
-拿到新问题 \(x\)，先做同样的抽取与改写，然后由 skill selector 比对库中所有 skill 的**名字与描述**，选出候选；再交给一个 judge 判定“这个 skill 能不能用来解这道题”。
+拿到新问题 \\(x\\)，先做同样的抽取与改写，然后由 skill selector 比对库中所有 skill 的**名字与描述**，选出候选；再交给一个 judge 判定“这个 skill 能不能用来解这道题”。
 
 ### 3.1 接受 → Skill Refinement
 
-若接受，用被选中的 \(s^\star=(m^\star,w^\star,p^\star)\) 作为过程性指导去解 \(x\)，得到新轨迹 \(\tau\)：
+若接受，用被选中的 \\(s^\star=(m^\star,w^\star,p^\star)\\) 作为过程性指导去解 \\(x\\)，得到新轨迹 \\(\tau\\)：
 
-- **正轨迹** → 强化 \(w^\star\) 里可复用的 SOP；
-- **负轨迹** → 往 \(p^\star\) 里补失败证据。
+- **正轨迹** → 强化 \\(w^\star\\) 里可复用的 SOP；
+- **负轨迹** → 往 \\(p^\star\\) 里补失败证据。
 
-轨迹先经 \(A_\eta\) 压成分析 \(q\)，再由 skill refiner 产出 \(s_{\text{refined}}\)。refiner **保留 metadata 与适用边界**，只更新 workflow 与 pitfalls，然后原地替换库中的 \(s^\star\)。
+轨迹先经 \\(A_\eta\\) 压成分析 \\(q\\)，再由 skill refiner 产出 \\(s_{\text{refined}}\\)。refiner **保留 metadata 与适用边界**，只更新 workflow 与 pitfalls，然后原地替换库中的 \\(s^\star\\)。
 
 ### 3.2 不接受 → Skill Expansion
 
-若没有合适 skill，就把它当作“新 archetype 的候选”，跑一次 solver portfolio rollout 得到 \(\mathcal{T}_x\)，同样压成 \(q\)。
+若没有合适 skill，就把它当作“新 archetype 的候选”，跑一次 solver portfolio rollout 得到 \\(\mathcal{T}_x\\)，同样压成 \\(q\\)。
 
-关键护栏：**只有至少存在一条正轨迹时，才允许扩张**（\(\mathcal{M}_{t+1}=\mathcal{M}_t\cup\{s_{\text{new}}\}\)）。否则库会被“来自失败尝试的伪知识”污染。
+关键护栏：**只有至少存在一条正轨迹时，才允许扩张**（\\(\mathcal{M}_{t+1}=\mathcal{M}_t\cup\{s_{\text{new}}\}\\)）。否则库会被“来自失败尝试的伪知识”污染。
 
 ### 3.3 测试期
 
-测试时库 \(\mathcal{M}^\ast\) 冻结，不再更新：抽取 \(\kappa,\tilde{x}\) → selector 按名字/描述检索 skill → 注入 agent 作为过程指导 → 生成解 → 对答案。
+测试时库 \\(\mathcal{M}^\ast\\) 冻结，不再更新：抽取 \\(\kappa,\tilde{x}\\) → selector 按名字/描述检索 skill → 注入 agent 作为过程指导 → 生成解 → 对答案。
 
 ## 4. 实验：几个值得看的曲线与数字
 
@@ -218,7 +218,7 @@ MIPLIB-NL 是大规模工业实例（变量、约束都很多），是这类方�
 
 ## 5. 我的理解：这套设计真正解决了什么
 
-1. **把“经验”的粒度从案例提升到工作流。** skill 的 \(w\) 是一串建模动作，不是一段答案文本，所以能扛叙述变化。
+1. **把“经验”的粒度从案例提升到工作流。** skill 的 \\(w\\) 是一串建模动作，不是一段答案文本，所以能扛叙述变化。
 2. **聚类不是工程细节，而是性能来源。** 46 vs 129、15.2% vs 62.8% 的未使用率对比，直接解释了为什么“多”不等于“好”。
 3. **refine 与 expand 的分工很关键。** 前者在旧 archetype 内做增量修正，后者只在有正证据时扩张——这避免了库被噪声污染。
 4. **可迁移性靠“有正轨迹才扩库”这条硬规则兜底。** 这条规则看着不起眼，但它是 OOD 场景下不崩的原因。
