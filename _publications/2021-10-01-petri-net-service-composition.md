@@ -2,7 +2,7 @@
 title: "Research of the Service Composition Optimization Model Based on Petri Net"
 collection: publications
 category: manuscripts
-permalink: /publication/petri-net-service-composition
+permalink: /publication/petri-net-service-composition/
 excerpt: 'A Petri-net based optimization model for service composition.'
 date: 2021-10-01
 venue: 'Journal of Computers, 32(5), 101-114'

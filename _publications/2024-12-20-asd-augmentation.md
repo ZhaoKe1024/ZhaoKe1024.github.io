@@ -2,7 +2,7 @@
 title: "Reconstruction-based Spectrogram Augmentation for Anomalous Sound Detection System"
 collection: publications
 category: conferences
-permalink: /publication/asd-spectrogram-augmentation
+permalink: /publication/asd-spectrogram-augmentation/
 excerpt: 'Reconstruction-based spectrogram augmentation for anomalous sound detection, with an open-source DCASE pipeline.'
 date: 2024-12-20
 venue: 'ICCC 2024'

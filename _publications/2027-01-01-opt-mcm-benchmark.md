@@ -2,7 +2,7 @@
 title: "OPT-MCM: A Near Real-World Benchmark for End-to-End Optimization Agents with Co-Evolving Rubrics"
 collection: publications
 category: conferences
-permalink: /publication/opt-mcm-benchmark
+permalink: /publication/opt-mcm-benchmark/
 excerpt: 'A benchmark of 34 near real-world optimization tasks with task-specific, solution-route-invariant rubrics built by Solution-Rubric Co-Evolution.'
 date: 2027-01-01
 venue: 'KDD 2027'

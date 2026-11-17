@@ -2,7 +2,7 @@
 title: "Research on Edge Cloud Load Balancing Strategy Based on Chaotic Hierarchical Gene Replication"
 collection: publications
 category: manuscripts
-permalink: /publication/edge-cloud-chaotic-gene
+permalink: /publication/edge-cloud-chaotic-gene/
 excerpt: 'A chaotic hierarchical gene-replication strategy for load balancing in edge-cloud environments.'
 date: 2022-09-01
 venue: 'Journal of Advanced Computational Intelligence and Intelligent Informatics, 26(5), 758-767'
