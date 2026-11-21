@@ -1,7 +1,7 @@
 ---
 title: "FGNet: A Lightweight Network for Tongue Image Segmentation"
 collection: publications
-category: conferences
+category: dl-ml
 permalink: /publication/fgnet-tongue-segmentation/
 excerpt: 'A lightweight segmentation network for tongue images in TCM diagnosis.'
 date: 2024-11-10

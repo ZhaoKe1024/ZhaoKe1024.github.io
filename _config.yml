@@ -34,7 +34,7 @@ author:
   # -------- 学术站点（填了才在侧边栏出现图标，留空即可） --------
   academia         : # https://xxx.academia.edu/YourName
   arxiv            : # https://arxiv.org/a/xxxx
-  googlescholar    : # https://scholar.google.com/citations?user=XXXXXXXX
+  googlescholar    : "https://scholar.google.com/citations?user=WoHL8e8AAAAJ&hl=zh-CN"
   orcid            : # https://orcid.org/0000-0000-0000-0000
   semantic         : # Semantic Scholar 主页 URL
   pubmed           : # PubMed 检索 URL
@@ -51,13 +51,14 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  # 键名要和 _publications/*.md 里的 category 字段一致；顺序即页面上的分组顺序
-  conferences:
-    title: 'Conference Papers'
-  manuscripts:
-    title: 'Journal Articles'
-  preprints:
-    title: 'Preprints'
+  # 按“主题”分组（不再按会议/期刊/预印本），键名对应 _publications/*.md 的 category；
+  # 这个顺序就是 publications 页面上的分组顺序
+  llm-agent:
+    title: 'LLMs and Agent'
+  dl-ml:
+    title: 'Deep Learning and Machine Learning'
+  opt-ec:
+    title: 'Optimization and Evolutionary Computing'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews

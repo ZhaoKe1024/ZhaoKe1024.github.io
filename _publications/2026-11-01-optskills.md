@@ -1,7 +1,7 @@
 ---
 title: "OptSkills: Learning Generalizable Optimization Skills from Problem Archetypes via Cluster-Based Distillation"
 collection: publications
-category: conferences
+category: llm-agent
 permalink: /publication/optskills/
 excerpt: 'Optimization agents reuse experience at the archetype level: cluster problems in an archetype space, roll out a solver portfolio, and distill reusable skills.'
 date: 2026-11-01

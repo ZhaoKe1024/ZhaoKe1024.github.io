@@ -1,7 +1,7 @@
 ---
 title: "Edge cloud task scheduling model based on layered excellent gene replication strategy"
 collection: publications
-category: manuscripts
+category: opt-ec
 permalink: /publication/edge-cloud-layered-gene/
 excerpt: 'A layered excellent-gene-replication scheduling model for edge-cloud task allocation.'
 date: 2021-12-01
